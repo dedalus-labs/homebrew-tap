@@ -3,7 +3,7 @@ cask "dedalus" do
   name "dedalus"
   desc "The official CLI for Dedalus."
   homepage "https://docs.dedaluslabs.ai"
-  version "0.0.1"
+  version "0.0.3"
 
   livecheck do
     skip "Auto-generated on release."
@@ -18,22 +18,22 @@ cask "dedalus" do
   on_macos do
     on_intel do
       url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v#{version}/dedalus_#{version}_macos_amd64.zip"
-      sha256 "8887ba1aa907941cf79130a8b175ea7ce0c4513ea745799ecceb0abfcc10eb11"
+      sha256 "ef5880d0a832cc7e376c2e73cd988c9e60357b90fd9c2e845606e1731e04b321"
     end
     on_arm do
       url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v#{version}/dedalus_#{version}_macos_arm64.zip"
-      sha256 "7ec6ba63e76e402a757362192acbe4b1620ebfa0390b4cda38573bcc2a0b4bbb"
+      sha256 "09ee9a1920a169df57044098e7057864d00d0ca694c344d11b00c5fdaa5fc9d5"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v#{version}/dedalus_#{version}_linux_amd64.tar.gz"
-      sha256 "da388852a8b2c345ed1bce0ecf9910d28e8b6cdaa588ab986abc8be157b4827a"
+      sha256 "9491c517d3f58626fdf496101d130344a80db1761971e6945cf31473eb16e363"
     end
     on_arm do
       url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v#{version}/dedalus_#{version}_linux_arm64.tar.gz"
-      sha256 "15f0439e92245845248fc1c6e0fec6676669e86680487c232c0ab873f5effbe8"
+      sha256 "19cecdca06b1fa9ed031c6aa2d6a9f08280fb91541bb730754a3482749bf284c"
     end
   end
 
