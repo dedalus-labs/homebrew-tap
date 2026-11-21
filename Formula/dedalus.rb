@@ -1,28 +1,28 @@
 class Dedalus < Formula
   desc "Official CLI for Dedalus"
   homepage "https://docs.dedaluslabs.ai"
-  version "0.9.0"
+  version "0.9.1"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v0.9.0/dedalus-darwin-arm64.tar.gz"
-      sha256 "374b60573ef87db3e2b5b7ecd6c538a915f1b72804475b362c993f86770ca550"
+      url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v0.9.1/dedalus-darwin-arm64.tar.gz"
+      sha256 "9c0a74d7a1d4d51930407318bf1e426e125e6128deda8ffcc5320f863f1066f7"
     end
     on_intel do
-      url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v0.9.0/dedalus-darwin-x64.tar.gz"
-      sha256 "9c54054198796f3485035acb7783e42a2e89ada1f7e33ffc6925a9a0cc8711e0"
+      url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v0.9.1/dedalus-darwin-x64.tar.gz"
+      sha256 "eb97757c1ecc27f078ca9ab0be977922b9de6cab059fd98caf6f3dfbda4412e0"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v0.9.0/dedalus-linux-arm64.tar.gz"
-      sha256 "e1fe64756cfc2ef121f0df84d83ff7f78926c8e9ed7b77da32a20238cc0282d7"
+      url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v0.9.1/dedalus-linux-arm64.tar.gz"
+      sha256 "495922eac20ce842818475fc91298afad6f00a0d3f8aeb842714e0fdb851558f"
     end
     on_intel do
-      url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v0.9.0/dedalus-linux-x64.tar.gz"
-      sha256 "ebaf43f8b35c58ae0e3357a8b00446fa3a2fae1310c719b3337657e9841d426e"
+      url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v0.9.1/dedalus-linux-x64.tar.gz"
+      sha256 "b42568d501133f27b95ea7a546028e3ce5a145f93df7606fcf255ff6afa278cf"
     end
   end
 
