@@ -1,33 +1,18 @@
 class Dedalus < Formula
   desc "Official CLI for Dedalus"
   homepage "https://docs.dedaluslabs.ai"
-  version "0.9.0"
+  version "0.9.3"
   license "Apache-2.0"
-
-  on_macos do
-    on_arm do
-      url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v0.9.0/dedalus-darwin-arm64.tar.gz"
-      sha256 "374b60573ef87db3e2b5b7ecd6c538a915f1b72804475b362c993f86770ca550"
-    end
-    on_intel do
-      url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v0.9.0/dedalus-darwin-x64.tar.gz"
-      sha256 "9c54054198796f3485035acb7783e42a2e89ada1f7e33ffc6925a9a0cc8711e0"
-    end
-  end
-
-  on_linux do
-    on_arm do
-      url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v0.9.0/dedalus-linux-arm64.tar.gz"
-      sha256 "e1fe64756cfc2ef121f0df84d83ff7f78926c8e9ed7b77da32a20238cc0282d7"
-    end
-    on_intel do
-      url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v0.9.0/dedalus-linux-x64.tar.gz"
-      sha256 "ebaf43f8b35c58ae0e3357a8b00446fa3a2fae1310c719b3337657e9841d426e"
-    end
-  end
+  url "https://github.com/dedalus-labs/dedalus-cli/releases/download/v0.9.3/dedalus-cli-0.9.3.tgz"
+  sha256 "d3f8a8ace2b1e1ff64a8866a053ded1935aa4e402ceb73328fd4da5b03edb840"
+  depends_on "node"
+  depends_on "pnpm" => :build
 
   def install
-    bin.install "dedalus"
+    libexec.mkpath
+    system "pnpm", "add", "--dir", libexec, "--prod", "--ignore-scripts", cached_download.to_s
+    (bin/"dedalus").write_env_script libexec/"node_modules/.bin/dedalus", PATH: "#{Formula["node"].opt_bin}:$PATH"
+    man1.install Dir[libexec/"node_modules/dedalus-cli/man/*.1"]
   end
 
   test do
